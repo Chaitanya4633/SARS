@@ -7,14 +7,18 @@ export default function HomeScreen({ navigation }) {
       <Text style={styles.title}>Smart Ambulance Routing System</Text>
       <Text style={styles.subtitle}>Saving lives through optimized response</Text>
 
+      {/* BIG RED CALL BUTTON - For Public */}
       <TouchableOpacity 
-        style={[styles.button, styles.patientBtn]}
-        onPress={() => navigation.navigate('Registration')}
+        style={[styles.button, styles.callBtn]}
+        onPress={() => navigation.navigate('CallerEmergency')}
       >
-        <Text style={styles.btnText}>Emergency Registration</Text>
+        <Text style={styles.callIcon}>🚨</Text>
+        <Text style={styles.callBtnText}>CALL AMBULANCE</Text>
+        <Text style={styles.callSubtext}>Emergency? Tap here!</Text>
       </TouchableOpacity>
 
       <View style={styles.separator} />
+      <Text style={styles.sectionTitle}>Staff Login</Text>
 
       <TouchableOpacity 
         style={[styles.button, styles.dispatchBtn]}
@@ -60,16 +64,48 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 40
   },
+  callBtn: {
+    backgroundColor: '#dc2626',
+    padding: 30,
+    borderRadius: 16,
+    marginVertical: 10,
+    alignItems: 'center',
+    shadowColor: '#dc2626',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8
+  },
+  callIcon: {
+    fontSize: 48,
+    marginBottom: 10
+  },
+  callBtnText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24
+  },
+  callSubtext: {
+    color: 'rgba(255,255,255,0.8)',
+    fontSize: 14,
+    marginTop: 5
+  },
+  sectionTitle: {
+    fontSize: 14,
+    color: '#6B7280',
+    textAlign: 'center',
+    marginBottom: 15,
+    fontWeight: '500'
+  },
   button: {
     padding: 15,
     borderRadius: 8,
-    marginVertical: 10,
+    marginVertical: 8,
     alignItems: 'center'
   },
-  patientBtn: { backgroundColor: '#EF4444' }, // Red
-  dispatchBtn: { backgroundColor: '#3B82F6' }, // Blue
-  ambBtn: { backgroundColor: '#F59E0B' }, // Yellow/Orange
-  hospBtn: { backgroundColor: '#10B981' }, // Green
+  dispatchBtn: { backgroundColor: '#3B82F6' },
+  ambBtn: { backgroundColor: '#F59E0B' },
+  hospBtn: { backgroundColor: '#10B981' },
   btnText: { color: 'white', fontWeight: 'bold', fontSize: 16 },
   separator: {
     height: 1,

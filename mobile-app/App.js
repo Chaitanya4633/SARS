@@ -12,6 +12,7 @@ import HospitalScreen from './screens/HospitalScreen';
 import DriverLoginScreen from './screens/DriverLoginScreen';
 import DriverHomeScreen from './screens/DriverHomeScreen';
 import DriverNavigationScreen from './screens/DriverNavigationScreen';
+import CallerEmergencyScreen from './screens/CallerEmergencyScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +67,11 @@ export default function App() {
           name="DriverNavigation" 
           component={DriverNavigationScreen} 
           options={{ title: 'Navigation' }} 
+        />
+        <Stack.Screen 
+          name="CallerEmergency" 
+          component={CallerEmergencyScreen} 
+          options={{ title: 'Report Emergency', headerStyle: { backgroundColor: '#dc2626' } }} 
         />
       </Stack.Navigator>
     </NavigationContainer>
